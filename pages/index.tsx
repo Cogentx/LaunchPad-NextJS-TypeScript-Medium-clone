@@ -11,14 +11,23 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <Header />
+      <header>
+        <Header />
+        <Banner />
+      </header>
 
-      <Banner />
+      {/* Posts Section */}
+      <section>
 
-      {/* Posts */}
-      <section></section>
+      </section>
     </div>
   );
 };
 
 export default Home;
+
+// Enable SSR in Next.js for this page
+export const getServerSideProps =async () => {
+  // fetch data from Sanity backend
+  
+}
