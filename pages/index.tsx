@@ -1,9 +1,16 @@
-import type { NextPage } from 'next';
 import Head from 'next/head';
 import Banner from '../components/Banner';
 import Header from '../components/Header';
+import { sanityClient, urlFor } from '../sanity';
+import { Post } from '../typings';
 
-const Home: NextPage = () => {
+interface Props {
+  posts: [Post];
+}
+
+// const Home: NextPage = (props) => {
+export default function Home({ posts }: Props) {
+  // console.log(posts);
   return (
     <div className="mx-auto max-w-7xl">
       <Head>
@@ -17,17 +24,31 @@ const Home: NextPage = () => {
       </header>
 
       {/* Posts Section */}
-      <section>
-
-      </section>
+      <section></section>
     </div>
   );
-};
-
-export default Home;
+}
 
 // Enable SSR in Next.js for this page
-export const getServerSideProps =async () => {
+export const getServerSideProps = async () => {
   // fetch data from Sanity backend
-  
-}
+  const query = `*[_type == "post"] {
+  _id,
+  title,
+  author->{
+  name,
+  image
+},
+description,
+mainImage,
+slug
+}`;
+
+  const posts = await sanityClient.fetch(query);
+
+  return {
+    props: {
+      posts,
+    },
+  };
+};
