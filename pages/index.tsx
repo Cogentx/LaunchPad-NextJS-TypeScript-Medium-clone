@@ -1,16 +1,16 @@
 import Head from 'next/head';
 import Banner from '../components/Banner';
 import Header from '../components/Header';
+import Posts from '../components/Posts';
 import { sanityClient, urlFor } from '../sanity';
-import { Post } from '../typings';
+import { IPost } from '../typings';
 
 interface Props {
-  posts: [Post];
+  posts: [IPost];
 }
 
 // const Home: NextPage = (props) => {
 export default function Home({ posts }: Props) {
-  // console.log(posts);
   return (
     <div className="mx-auto max-w-7xl">
       <Head>
@@ -24,7 +24,9 @@ export default function Home({ posts }: Props) {
       </header>
 
       {/* Posts Section */}
-      <section></section>
+      <Posts posts={posts}/>
+
+
     </div>
   );
 }
