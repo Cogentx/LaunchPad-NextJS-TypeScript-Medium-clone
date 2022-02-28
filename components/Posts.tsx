@@ -1,6 +1,5 @@
 import React from 'react';
 import { IPost } from '../typings';
-import { urlFor } from '../sanity';
 import Post from './Post';
 
 interface Props {
