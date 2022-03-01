@@ -8,8 +8,8 @@ interface IProps {
 
 function Post({ post }: IProps) {
   return (
-    <Link key={post._id} href={`/posts/${post.slug.current}`}>
-      <div className="group border rounded-lg cursor-pointer overflow-hidden">
+    <Link key={post._id} href={`/post/${post.slug.current}`}>
+      <div className="group cursor-pointer overflow-hidden rounded-lg border">
         {/* if mainImage.asset.url exists render image | '!' at end of url() assures TypeScript value will exist */}
         {post.mainImage && (
           <img
@@ -20,8 +20,8 @@ function Post({ post }: IProps) {
         )}
         <div className="flex justify-between bg-white p-5">
           <div>
-            <p className='text-lg font-bold'>{post.title}</p>
-            <p className='text-xs'>
+            <p className="text-lg font-bold">{post.title}</p>
+            <p className="text-xs">
               {post.description} by {post.author.name}
             </p>
           </div>
