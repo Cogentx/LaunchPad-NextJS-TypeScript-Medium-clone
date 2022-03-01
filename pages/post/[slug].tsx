@@ -13,6 +13,12 @@ function PostPage({ post }: Props) {
     <main>
       <Header />
 
+      <img
+        src={urlFor(post.mainImage).url()}
+        alt="post banner image"
+        className="h-40 w-full object-cover"
+      />
+
 
     </main>
   );
