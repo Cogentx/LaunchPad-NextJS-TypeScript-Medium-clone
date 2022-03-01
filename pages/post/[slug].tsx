@@ -72,6 +72,10 @@ function PostPage({ post }: Props) {
           />
         </div>
       </article>
+
+      <hr className="my-5 mx-auto max-w-lg border border-yellow-500" />
+
+      
     </main>
   );
 }
