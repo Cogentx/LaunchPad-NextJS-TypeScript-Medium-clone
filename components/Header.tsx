@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 function Header() {
   return (
-    <div className="flex justify-between p-5">
+    <div className="flex justify-between py-2 sm:p-5">
       <div className="flex items-center space-x-5">
         <Link href="/">
           <svg
@@ -22,9 +22,9 @@ function Header() {
         </div>
       </div>
 
-      <div className="flex items-center space-x-5 text-green-600">
+      <div className="flex items-center space-x-5 text-green-600 text-xs sm:text-sm md:text-base">
         <h3>Sign In</h3>
-        <h3 className="rounded-full border border-green-600 px-4 py-1">
+        <h3 className="rounded-full border border-green-600 px-1.5 py-0.25 sm:px-4 sm:py-1">
           Get Started
         </h3>
       </div>
