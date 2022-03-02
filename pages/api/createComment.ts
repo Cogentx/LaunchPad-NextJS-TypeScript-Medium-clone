@@ -30,14 +30,15 @@ export default async function createComment(
         _type: 'reference',
         _ref: _id,
       },
+      name,
+      email,
+      comment,
     });
   } catch (error) {
     return res
       .status(500)
       .json({ message: 'Counld not submit comment', error });
   }
-
-  console.log('Comment Saved! Thank you!');
 
   return res.status(200).json({ message: 'Comment Saved! Thank you!' });
 }
